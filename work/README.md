@@ -1,0 +1,1 @@
+A local folder in which to work on notebooks etc. 

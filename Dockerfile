@@ -49,6 +49,7 @@ RUN conda install --quiet --yes conda-build
 
 # copy over local files for my package
 ADD my_utilities/ /home/$NB_USER/my_utilities/
+
 # copy over other files
 ADD work/ /home/$NB_USER/work/
 
