@@ -3,9 +3,14 @@
 docker build -t my-ds-notebook -f ./Dockerfile ./
 ```
 
+### Run container, no passing aws keys
+```
+docker run -it --name my-ds-notebook -p 8888:8888 --mount type=bind,source="$(pwd)/work",target=/home/jovyan/work my-ds-notebook
+```
+
 ### Run container, pass keys as env vars
 ```
-docker run -it --name my-ds-notebook -p 8888:8888 -v ./work:/home/jovyan/work -e AWS_ACCESS_KEY_ID=$(aws --profile default configure get aws_access_key_id) -e AWS_SECRET_ACCESS_KEY=$(aws --profile default configure get aws_secret_access_key) my-ds-notebook
+docker run -it --name my-ds-notebook -p 8888:8888 --mount type=bind,source="$(pwd)/work",target=/home/jovyan/work -e AWS_ACCESS_KEY_ID=$(aws --profile default configure get aws_access_key_id) -e AWS_SECRET_ACCESS_KEY=$(aws --profile default configure get aws_secret_access_key) my-ds-notebook
 ```
 
 ### List containers

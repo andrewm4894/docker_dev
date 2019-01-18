@@ -65,5 +65,5 @@ RUN echo "install.packages('forecast', lib='/opt/conda/lib/R/library', repos='ht
 # some additional conda installs
 RUN conda install --quiet --yes -c anaconda simplegeneric
 
-# update permissions on mounted dir
-RUN chown -R $NB_UID:$NB_UID /home/$NB_USER/work/
+# run jupyter lab
+ENTRYPOINT ["jupyter", "lab","--ip=0.0.0.0","--allow-root"]
