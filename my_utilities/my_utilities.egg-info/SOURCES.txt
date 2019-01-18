@@ -1,0 +1,9 @@
+README.md
+setup.py
+my_utilities/__init__.py
+my_utilities/my_utils.py
+my_utilities.egg-info/PKG-INFO
+my_utilities.egg-info/SOURCES.txt
+my_utilities.egg-info/dependency_links.txt
+my_utilities.egg-info/not-zip-safe
+my_utilities.egg-info/top_level.txt
